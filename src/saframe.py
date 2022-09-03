@@ -21,7 +21,7 @@ def trans_Hg_to_cuda(Hg):
     return Hg
 
 
-# Scene-aware Frame for Session-based Recommendation (GraphSAGE)
+# Spatiotemporal-aware Frame for Session-based Recommendation
 class SAFrame(nn.Module):
     def __init__(
         self,
