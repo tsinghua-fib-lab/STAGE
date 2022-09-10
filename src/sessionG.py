@@ -101,7 +101,7 @@ class STAGE(SAFrame):
         ht = torch.matmul(h_int, self.w_1) + torch.matmul(h_locs, self.w_2) + torch.matmul(h_times, self.w_3) + torch.matmul(h_s, self.w_4)
         ht = ht.unsqueeze(1).repeat(1, len, 1)             # (b, N, dim)
         
-        feat = ht * hidden   # performance gain in Tmall
+        feat = ht * nh  
         feat_s = torch.sigmoid(feat)  
         attn_s = feat_s.matmul(self.q_attn)  # (b, N, 1)
         beta = attn_s * mask
